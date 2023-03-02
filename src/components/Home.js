@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Section from "./Section";
-import datas from "../services/datas";
+import datas from "../services/datas.js";
 
 const Home = () => {
   return (

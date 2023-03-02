@@ -13,6 +13,7 @@ const Section = ({
         <h1>{title}</h1>
         <p>{description}</p>
       </ItemText>
+
       <Buttons>
         <ButtonGroup>
           <LeftButton>{leftBtnText}</LeftButton>

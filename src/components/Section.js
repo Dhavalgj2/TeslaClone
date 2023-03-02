@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+// import { motion } from "framer-motion";
+import { Slide } from "react-awesome-reveal";
+
 const Section = ({
   title,
   description,
@@ -7,17 +10,25 @@ const Section = ({
   rightBtnText,
   backgroundImg,
 }) => {
+  const transition = { type: "spring", duration: 3 };
+
   return (
     <Wrap bgImage={backgroundImg}>
       <ItemText>
-        <h1>{title}</h1>
-        <p>{description}</p>
+        <Slide direction="up">
+          <h1>{title}</h1>
+          <p>{description}</p>
+        </Slide>
       </ItemText>
 
       <Buttons>
         <ButtonGroup>
-          <LeftButton>{leftBtnText}</LeftButton>
-          {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
+          <Slide direction="left">
+            <LeftButton>{leftBtnText}</LeftButton>
+          </Slide>
+          <Slide direction="right">
+            {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
+          </Slide>
         </ButtonGroup>
         <DownArrow src="/images/down-arrow.svg" />
       </Buttons>
@@ -38,6 +49,16 @@ const Wrap = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 768px) {
+    background-image {
+      width: 100%;
+    }
+  }
+  @media only screen and (max-width: 480px) {
+    h1 {
+      font-size: 21px;
+    }
+  }
 `;
 const ItemText = styled.div`
   color: black;

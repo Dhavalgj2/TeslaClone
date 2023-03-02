@@ -100,6 +100,11 @@ const RightMenu = styled.div`
   }
   @media (max-width: 768px) {
   }
+  @media only screen and (max-width: 480px) {
+    a {
+      display: none;
+    }
+  }
 `;
 const Menu = styled.div`
   display: flex;
